@@ -3,14 +3,14 @@
     <h1>{{title}}</h1>
     <form-helper>
       <div slot="form-header">
-        <h3>Login form</h3>
+        <h3>Another form</h3>
       </div>
       <div slot="form-fields">
-        <input type = "text" placeholder="name" required />
-        <input type = "password" placeholder="password" required />
+        <b-form-input type="text" placeholder="name" required />
+        <b-form-input type="password" placeholder="password" required />
       </div>
       <div slot="form-controls">
-        <button v-on:click="submitHandle">Submit</button>
+        <b-button v-on:click="submitHandle">Submit</b-button>
       </div>
     </form-helper>
 

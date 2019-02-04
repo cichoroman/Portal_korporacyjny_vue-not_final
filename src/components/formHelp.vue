@@ -36,6 +36,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+input {margin-top: 1em;
+  margin-bottom: 1em }
 
 </style>
