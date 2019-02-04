@@ -5,10 +5,12 @@ import Login from './components/loginForm.vue';
 import AddUser from './components/addUser.vue';
 //import Statystyki from './components/Statystyki.vue';
 //import DodajMaterialy from './components/DodajMaterialy.vue';
+import AddPost from './components/addPost.vue';
 import NotFound from './components/NotFound.vue';
 
 export default [
     { path: '/', component: Ninjas},
+    { path: '/addPost', component: AddPost},
 
 //    { path: '/tematy/:id', component: Temat},
 

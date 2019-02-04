@@ -10,11 +10,16 @@
         <b-nav-item>
           <router-link to="/login">Log in</router-link>
         </b-nav-item>
-
+        <b-nav-item>
+          <router-link to="/addPost">Add Post</router-link>
+        </b-nav-item>
       </b-navbar-nav>
 
     </div>
   </navbar>
+
+
+
   <b-container class="bv-example-row">
     <b-row class="text-center">
           <b-col xs="0" sm="1" lg="3"></b-col>
@@ -33,10 +38,13 @@
 <script>
 import navbar from './components/navbar.vue'
 import loginForm from './components/loginForm.vue'
+import addPost from './components/addPost.vue'
 export default {
   components: {
     'navbar': navbar,
-    'login-form': loginForm
+    'login-form': loginForm,
+    'add-post': addPost
+
   },
   data() {
     return {
