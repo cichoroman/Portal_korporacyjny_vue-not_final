@@ -1,12 +1,20 @@
 <template>
   <div>
+    <b-container class="bv-example-row">
+    <b-row>
+        <b-col></b-col>
+        <b-col>
+
+
     <h1>{{title}}</h1>
+
+
     <form-helper>
       <div slot="form-header">
         <h3>Another form</h3>
       </div>
       <div slot="form-fields">
-        <input type = "text" placeholder="name" required />
+        <b-form-input type = "text" placeholder="name" required />
         <input type = "password" placeholder="password" required />
       </div>
       <div slot="form-controls">
@@ -15,6 +23,10 @@
     </form-helper>
 
     <login-form></login-form>
+</b-col>
+<b-col></b-col>
+</b-row>
+</b-container>
 
   </div>
 </template>

@@ -1,12 +1,15 @@
 <template>
   <div>
     <h1>Please fill the form below</h1>
-    <form>
-      <div id="form-header">
-        <slot name="form-header">
+    <b-form>
+      <b-form-group>
+        <div id="form-header">
+          <slot name="form-header">
 
-        </slot>
-      </div>
+          </slot>
+        </div>
+      </b-form-group>
+
       <div id="form-fields">
         <slot name="form-fields">
 
@@ -18,7 +21,7 @@
         </slot>
        </div>
 
-    </form>
+    </b-form>
   </div>
 </template>
 
