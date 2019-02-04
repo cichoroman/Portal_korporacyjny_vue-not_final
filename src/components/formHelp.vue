@@ -2,7 +2,7 @@
   <div>
     <b-card bg
                   text-variant="white"
-                  header="Please fill the form below"
+                  
                   class="text-center navColor">
 
     <b-form>

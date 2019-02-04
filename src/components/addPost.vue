@@ -3,22 +3,72 @@
 
   <form-helper>
     <div slot="form-header">
-      <h3>User registration form</h3>
+      <h1>Add post</h1>
     </div>
     <div slot="form-fields">
 
-      <b-form-input  v-model="addedPost.title" type="text" placeholder="title"  required />
-      <b-form-input v-model="addedPost.content" type="text" placeholder="content" required />
-      <select v-model="addedPost.selectedTopic">
-        <option v-for="topic in topics" >{{topic.name}}</option>
-      </select>
+      <b-form-group
+            id="fieldset1"
 
+            label="Enter the title"
+            label-for="select-topic"
+            :invalid-feedback="invalidFeedback"
+            :valid-feedback="validFeedback"
+            :state="state"
+        >
+      <b-form-input  v-model="addedPost.title" type="text" placeholder="title"  required />
+    </b-form-group>
+      <b-form-group
+            id="fieldset1"
+
+            label="Enter the content or specific question"
+            label-for="select-topic"
+            :invalid-feedback="invalidFeedback"
+            :valid-feedback="validFeedback"
+            :state="state"
+        >
+      <b-form-textarea v-model="addedPost.content" type="text" placeholder="Your post or question" :rows="3"
+                     :max-rows="6" required />
+</b-form-group>
+                     <b-form-group
+                           id="fieldset1"
+                           description="If there is no matching topic, contact the administrator."
+                           label="Choose the topic from the list"
+                           label-for="select-topic"
+                           :invalid-feedback="invalidFeedback"
+                           :valid-feedback="validFeedback"
+                           :state="state"
+                       >
+
+      <b-form-select v-model="addedPost.selectedTopic" id="select-topic">
+        <option v-for="topic in topics" >{{topic.name}}</option>
+      </b-form-select>
+</b-form-group>
     </div>
       <div slot="form-controls">
         <b-button v-on:click.prevent="handleSubmit">Submit</b-button>
       </div>
 
   </form-helper>
+
+  <b-jumbotron bg text-variant="white" border-variant="dark" class="navColor">
+  <template slot="header">
+    Post preview
+  </template>
+  <template slot="lead">
+
+  </template>
+  <hr class="my-4">
+  <pre >
+<h1>{{addedPost.selectedTopic}}</h1>
+<h2>{{addedPost.title}}</h2>
+<p>
+  {{addedPost.content}}
+</p>
+  </pre>
+</b-jumbotron>
+
+
 
 </div>
 </template>
@@ -53,6 +103,7 @@ export default {
         }
       ]
 
+
     }
   },
   methods: {
@@ -65,6 +116,8 @@ export default {
 
 </script>
 
-<style>
-
+<style scoped>
+pre{
+  color: white;
+}
 </style>

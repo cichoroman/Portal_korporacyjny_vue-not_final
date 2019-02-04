@@ -22,12 +22,12 @@
 
   <b-container class="bv-example-row">
     <b-row class="text-center">
-          <b-col xs="0" sm="1" lg="3"></b-col>
+          <b-col xs="0" sm="1" lg="2"></b-col>
 
-          <b-col xs="12" sm="10" lg="6">
+          <b-col xs="12" sm="10" lg="8">
             <router-view></router-view>
           </b-col>
-          <b-col xs="0" sm="1" lg="3"></b-col>
+          <b-col xs="0" sm="1" lg="2"></b-col>
         </b-row>
 
   </b-container>

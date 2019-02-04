@@ -1,2 +1,3 @@
 poprzenosic zhardkodowane objekty w componentach,
 zmienic tło na legitne,
+podmienic mocka na normalne pozniej,
