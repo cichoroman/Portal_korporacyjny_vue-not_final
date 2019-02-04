@@ -3,7 +3,7 @@
     <h1>{{title}}</h1>
     <form-helper>
       <div slot="form-header">
-        <h3>Another form</h3>
+        <h3>Login form</h3>
       </div>
       <div slot="form-fields">
         <input type = "text" placeholder="name" required />
@@ -14,22 +14,19 @@
       </div>
     </form-helper>
 
-    <login-form></login-form>
-
   </div>
 </template>
 
 <script>
-import formHelp from './components/formHelp.vue'
-import loginForm from './components/loginForm.vue'
+import formHelp from './formHelp.vue'
+
 export default {
   components:{
-    'form-helper':formHelp,
-    'login-form':loginForm
+    'form-helper':formHelp
   },
   data () {
     return {
-      title:'App'
+
     }
   }
 }
