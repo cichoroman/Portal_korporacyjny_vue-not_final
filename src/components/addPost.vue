@@ -7,66 +7,39 @@
     </div>
     <div slot="form-fields">
 
-      <b-form-group
-            id="fieldset1"
+      <b-form-group id="fieldset1" label="Enter the title" label-for="select-topic" :invalid-feedback="invalidFeedback" :valid-feedback="validFeedback" :state="state">
+        <b-form-input v-model="addedPost.title" type="text" placeholder="title" required />
+      </b-form-group>
+      <b-form-group id="fieldset1" label="Enter the content or specific question" label-for="select-topic" :invalid-feedback="invalidFeedback" :valid-feedback="validFeedback" :state="state">
+        <b-form-textarea v-model="addedPost.content" type="text" placeholder="Your post or question" :rows="3" :max-rows="6" required />
+      </b-form-group>
+      <b-form-group id="fieldset1" description="If there is no matching topic, contact the administrator." label="Choose the topic from the list" label-for="select-topic" :invalid-feedback="invalidFeedback" :valid-feedback="validFeedback" :state="state">
 
-            label="Enter the title"
-            label-for="select-topic"
-            :invalid-feedback="invalidFeedback"
-            :valid-feedback="validFeedback"
-            :state="state"
-        >
-      <b-form-input  v-model="addedPost.title" type="text" placeholder="title"  required />
-    </b-form-group>
-      <b-form-group
-            id="fieldset1"
-
-            label="Enter the content or specific question"
-            label-for="select-topic"
-            :invalid-feedback="invalidFeedback"
-            :valid-feedback="validFeedback"
-            :state="state"
-        >
-      <b-form-textarea v-model="addedPost.content" type="text" placeholder="Your post or question" :rows="3"
-                     :max-rows="6" required />
-</b-form-group>
-                     <b-form-group
-                           id="fieldset1"
-                           description="If there is no matching topic, contact the administrator."
-                           label="Choose the topic from the list"
-                           label-for="select-topic"
-                           :invalid-feedback="invalidFeedback"
-                           :valid-feedback="validFeedback"
-                           :state="state"
-                       >
-
-      <b-form-select v-model="addedPost.selectedTopic" id="select-topic">
-        <option v-for="topic in topics" >{{topic.name}}</option>
-      </b-form-select>
-</b-form-group>
+        <b-form-select v-model="addedPost.selectedTopic" id="select-topic">
+          <option v-for="topic in topics">{{topic.name}}</option>
+        </b-form-select>
+      </b-form-group>
     </div>
-      <div slot="form-controls">
-        <b-button v-on:click.prevent="handleSubmit">Submit</b-button>
-      </div>
+    <div slot="form-controls">
+      <b-button  variant="outline-primary" v-on:click="showPrewiew = !showPrewiew">Show post preview</b-button>
+
+      <b-button variant="outline-primary" v-on:click.prevent="handleSubmit">Submit</b-button>
+    </div>
 
   </form-helper>
 
   <b-jumbotron bg text-variant="white" border-variant="dark" class="navColor">
-  <template slot="header">
-    Post preview
-  </template>
-  <template slot="lead">
 
-  </template>
-  <hr class="my-4">
-  <pre >
+<template>
+<pre v-show="showPrewiew">
 <h1>{{addedPost.selectedTopic}}</h1>
 <h2>{{addedPost.title}}</h2>
 <p>
   {{addedPost.content}}
 </p>
-  </pre>
-</b-jumbotron>
+</pre>
+</template>
+  </b-jumbotron>
 
 
 
@@ -82,9 +55,14 @@ export default {
   },
   data() {
     return {
-      addedPost:{title: "", content: "", selectedTopic: ""},
+      showPrewiew: false,
 
-//shardkodzone !!!!! ma być docelowo z geta!!!
+      addedPost: {
+        title: "",
+        content: "",
+        selectedTopic: ""
+      },
+
       topics: [{
           id: 1,
           name: 'Frontend'
@@ -107,17 +85,28 @@ export default {
     }
   },
   methods: {
-    handleSubmit: function(){
-		    this.$http.post('https://demo9377995.mockable.io/addpost', this.addedPost ).then(function(data){
-          console.log(data);
+    handleSubmit: function() {
+      this.$http.post('https://demo9377995.mockable.io/addpost', this.addedPost).then(function(data) {
+        console.log(data);
       });
-    }}
-          }
-
+    }
+  }
+}
 </script>
 
 <style scoped>
-pre{
+button {
+  margin-left: 2em;
+
+}
+
+pre {
   color: white;
+  word-wrap: break-word;
+  /* IE 5.5-7 */
+  white-space: -moz-pre-wrap;
+  /* Firefox 1.0-2.0 */
+  white-space: pre-wrap;
+  /* current browsers */
 }
 </style>

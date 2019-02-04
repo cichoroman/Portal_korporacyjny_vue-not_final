@@ -5,13 +5,13 @@
       <b-navbar-nav class="ml-auto">
         <!-- <b-nav-item v-on:click="component='app-tematy'" >Tematy</b-nav-item> -->
         <b-nav-item>
-          <router-link to="/">Home </router-link>
+          <router-link to="/" ><b-button variant="outline-primary" >Home</b-button></router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/login">Log in</router-link>
+          <router-link to="/login"> <b-button variant="outline-primary" >Log in</b-button></router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/addPost">Add Post</router-link>
+          <router-link to="/addPost"> <b-button variant="outline-primary" >Add post</b-button></router-link>
         </b-nav-item>
       </b-navbar-nav>
 

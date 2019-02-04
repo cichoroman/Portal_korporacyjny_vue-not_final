@@ -10,7 +10,7 @@
         <b-form-input type="password" placeholder="password" required />
       </div>
       <div slot="form-controls">
-        <b-button v-on:click="submitHandle">Submit</b-button>
+        <b-button variant="outline-primary" v-on:click="submitHandle">Submit</b-button>
       </div>
     </form-helper>
 
