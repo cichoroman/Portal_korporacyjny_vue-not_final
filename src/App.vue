@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="main-page">
   <navbar>
     <div slot="menu">
       <b-navbar-nav class="ml-auto">
@@ -46,6 +46,17 @@ export default {
 }
 </script>
 
-<style>
+<style >
+body {
+
+ background-image: url("https://ak2.picdn.net/shutterstock/videos/19484962/thumb/1.jpg");   /*zmien obraz */
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  background-size: cover;
+
+background-color: rgb(182, 182, 182);
+  }
+
 
 </style>

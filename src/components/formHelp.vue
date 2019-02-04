@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h1>Please fill the form below</h1>
+    <b-card bg
+                  text-variant="white"
+                  header="Please fill the form below"
+                  class="text-center navColor">
+
     <b-form>
       <b-form-group>
         <div id="form-header">
@@ -22,6 +26,7 @@
        </div>
 
     </b-form>
+  </b-card>
   </div>
 </template>
 
@@ -38,6 +43,9 @@ export default {
 
 <style scoped>
 input {margin-top: 1em;
-  margin-bottom: 1em }
+  margin-bottom: 1em },
+b-card{
+  margin-top: 2em;
+}
 
 </style>

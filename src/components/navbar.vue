@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar class="nawigacja" toggleable="md" type="dark" >
+    <b-navbar class="navColor" toggleable="md" type="dark" >
 
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style>
-.nawigacja{
-  background-color: lightblue;
+.navColor{
+  background-color: rgba(0, 0, 0, .7)   ;
 }
 </style>
