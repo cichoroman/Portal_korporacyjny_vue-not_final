@@ -21,9 +21,9 @@
       </b-form-group>
     </div>
     <div slot="form-controls">
-      <b-button  variant="outline-primary" v-on:click="showPrewiew = !showPrewiew">Show post preview</b-button>
+      <b-button  variant="primary" v-on:click="showPrewiew = !showPrewiew">Show post preview</b-button>
 
-      <b-button variant="outline-primary" v-on:click.prevent="handleSubmit">Submit</b-button>
+      <b-button variant="primary" v-on:click.prevent="handleSubmit">Submit</b-button>
     </div>
 
   </form-helper>
