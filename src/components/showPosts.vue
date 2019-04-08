@@ -5,7 +5,7 @@
     <template>
 
       <div v-for="p in posts">
-        <h1 v-on:click="postId = p.id v-on:click=""">{{p.title}}</h1>
+        <h1 v-on:click="postId = p.id ">{{p.title}}</h1>
         <p v-if="p.id == postId">
           {{p.content}}
         </p>

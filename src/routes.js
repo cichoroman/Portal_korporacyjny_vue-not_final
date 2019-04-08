@@ -6,7 +6,7 @@ import AddUser from './components/addUser.vue';
 //import Statystyki from './components/Statystyki.vue';
 //import DodajMaterialy from './components/DodajMaterialy.vue';
 import AddPost from './components/addPost.vue';
-import ShowPosts from './components/ShowPosts.vue';
+import ShowPosts from './components/showPosts.vue';
 import NotFound from './components/NotFound.vue';
 
 export default [

@@ -39,6 +39,6 @@ export default {
 
 <style>
 .navColor{
-  background-color: rgba(0, 0, 0, .7)   ;
+  background-color: rgba(109, 109, 109, .95)   ;
 }
 </style>

@@ -5,16 +5,16 @@
       <b-navbar-nav class="ml-auto">
         <!-- <b-nav-item v-on:click="component='app-tematy'" >Tematy</b-nav-item> -->
         <b-nav-item>
-          <router-link to="/" ><b-button variant="outline-primary" >Home</b-button></router-link>
+          <router-link to="/" ><b-nav-item  >Home</b-nav-item></router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/login"> <b-button variant="outline-primary" >Log in</b-button></router-link>
+          <router-link to="/login"> <b-nav-item variant="default" >Log in</b-nav-item></router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/addPost"> <b-button variant="outline-primary" >Add post</b-button></router-link>
+          <router-link to="/addPost"><b-nav-item  variant="primary" >Add post</b-nav-item></router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/addUser"> <b-button variant="outline-primary" >Add user</b-button></router-link>
+          <router-link to="/addUser"><b-nav-item  variant="primary" >Add user</b-nav-item></router-link>
         </b-nav-item>
       </b-navbar-nav>
 
@@ -31,7 +31,7 @@
 
 
             <router-view></router-view>
-            <add-comment></add-comment> 
+          
            </b-col>
           <b-col xs="0" sm="1" lg="2"></b-col>
         </b-row>
@@ -69,11 +69,12 @@ export default {
 <style >
 body {
 
- background-image: url("https://ak2.picdn.net/shutterstock/videos/19484962/thumb/1.jpg");   /*zmien obraz */
+ background-image: url("http://elteonline.hu/wp-content/uploads/2018/11/bor%C3%ADt%C3%B32.jpg");
   background-repeat: no-repeat;
   background-position: right top;
   background-attachment: fixed;
   background-size: cover;
+
 
 background-color: rgb(182, 182, 182);
   }
