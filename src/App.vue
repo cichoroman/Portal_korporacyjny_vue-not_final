@@ -31,7 +31,7 @@
 
 
             <router-view></router-view>
-            <add-comment></add-comment>
+            <!--<add-comment></add-comment> -->
           </b-col>
           <b-col xs="0" sm="1" lg="2"></b-col>
         </b-row>
