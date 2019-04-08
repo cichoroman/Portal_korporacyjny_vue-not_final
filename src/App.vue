@@ -5,16 +5,16 @@
       <b-navbar-nav class="ml-auto">
         <!-- <b-nav-item v-on:click="component='app-tematy'" >Tematy</b-nav-item> -->
         <b-nav-item>
-          <router-link to="/" ><b-nav-item  >Home</b-nav-item></router-link>
+          <router-link to="/" ><b-button >Home</b-button></router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/login"> <b-nav-item variant="default" >Log in</b-nav-item></router-link>
+          <router-link to="/login"><b-button  >Log in</b-button></router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/addPost"><b-nav-item  variant="primary" >Add post</b-nav-item></router-link>
+          <router-link to="/addPost"><b-button  variant="primary" >Add post</b-button></router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/addUser"><b-nav-item  variant="primary" >Add user</b-nav-item></router-link>
+          <router-link to="/addUser"><b-button  variant="primary" >Add user</b-button></router-link>
         </b-nav-item>
       </b-navbar-nav>
 
@@ -31,7 +31,7 @@
 
 
             <router-view></router-view>
-          
+
            </b-col>
           <b-col xs="0" sm="1" lg="2"></b-col>
         </b-row>
