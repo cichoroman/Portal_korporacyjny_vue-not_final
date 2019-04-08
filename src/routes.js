@@ -6,17 +6,19 @@ import AddUser from './components/addUser.vue';
 //import Statystyki from './components/Statystyki.vue';
 //import DodajMaterialy from './components/DodajMaterialy.vue';
 import AddPost from './components/addPost.vue';
+import ShowPosts from './components/ShowPosts.vue';
 import NotFound from './components/NotFound.vue';
 
 export default [
-    { path: '/', component: Ninjas},
+    { path: '/', component: ShowPosts},
     { path: '/addPost', component: AddPost},
+    { path: '/showPosts', component: ShowPosts},
 
 //    { path: '/tematy/:id', component: Temat},
 
     { path: '/login', component: Login},
 
-    { path: '/add-user', component: AddUser},
+    { path: '/addUser', component: AddUser},
   //  { path: '/dodajmaterialy/:id', component: DodajMaterialy},
 
     { path: '/404', component: NotFound },

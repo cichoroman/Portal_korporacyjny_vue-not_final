@@ -13,6 +13,9 @@
         <b-nav-item>
           <router-link to="/addPost"> <b-button variant="outline-primary" >Add post</b-button></router-link>
         </b-nav-item>
+        <b-nav-item>
+          <router-link to="/addUser"> <b-button variant="outline-primary" >Add user</b-button></router-link>
+        </b-nav-item>
       </b-navbar-nav>
 
     </div>
@@ -25,7 +28,10 @@
           <b-col xs="0" sm="1" lg="2"></b-col>
 
           <b-col xs="12" sm="10" lg="8">
+
+
             <router-view></router-view>
+            <add-comment></add-comment>
           </b-col>
           <b-col xs="0" sm="1" lg="2"></b-col>
         </b-row>
@@ -39,11 +45,17 @@
 import navbar from './components/navbar.vue'
 import loginForm from './components/loginForm.vue'
 import addPost from './components/addPost.vue'
+import showPosts from './components/showPosts.vue'
+import test from './components/test.vue'
+import addComment from './components/addComment.vue'
 export default {
   components: {
     'navbar': navbar,
     'login-form': loginForm,
-    'add-post': addPost
+    'add-post': addPost,
+    'show-posts': showPosts,
+    'test': test,
+    'add-comment': addComment
 
   },
   data() {

@@ -1,3 +1,4 @@
 poprzenosic zhardkodowane objekty w componentach,
 zmienic tło na legitne,
 podmienic mocka na normalne pozniej,
+        topic: 'front'  //uwaga shardkodzone!!! buttony maja być do tego i maja być pobrane getem wszystkie topiki

@@ -6,11 +6,11 @@
         <h3>Login form</h3>
       </div>
       <div slot="form-fields">
-        <b-form-input type="text" placeholder="login" required />
-        <b-form-input type="password" placeholder="password" required />
+        <b-form-input type="text"  v-model="login.mailuid" placeholder="login" required />
+        <b-form-input type="password" v-model="login.pwd" placeholder="password" required />
       </div>
       <div slot="form-controls">
-        <b-button variant="outline-primary" v-on:click="submitHandle">Submit</b-button>
+        <b-button variant="outline-primary" v-on:click="handleSubmit">Submit</b-button>
       </div>
     </form-helper>
 
@@ -26,7 +26,18 @@ export default {
   },
   data () {
     return {
+      login: {
+      mailuid : "",
+      pwd : ""
+    }
 
+    }
+  },
+  methods: {
+    handleSubmit: function() {
+      this.$http.post('http://localhost/api/loginsys/login.php', this.login).then(function(data) {
+        console.log(data);
+      });
     }
   }
 }

@@ -3,20 +3,20 @@
 
   <form-helper>
     <div slot="form-header">
-      <h1>Add post</h1>
+      <h1>Add Comment</h1>
     </div>
     <div slot="form-fields">
 
-      <b-form-group id="fieldset1" label="Enter the title" label-for="select-topic">
-        <b-form-input v-model="addedPost.title" type="text" placeholder="title" required />
+      <b-form-group id="fieldset1" label="Enter the author" label-for="select-topic">
+        <b-form-input v-model="addedComment.author" type="text" placeholder="title" required />
       </b-form-group>
       <b-form-group id="fieldset1" label="Enter the content or specific question" label-for="select-topic" >
-        <b-form-textarea v-model="addedPost.content" type="text" placeholder="Your post or question" :rows="3" :max-rows="6" required />
+        <b-form-textarea v-model="addedComment.content" type="text" placeholder="Your post or question" :rows="3" :max-rows="6" required />
       </b-form-group>
-      <b-form-group id="fieldset1" description="If there is no matching topic, contact the administrator." label="Choose the topic from the list" label-for="select-topic" >
+      <b-form-group id="fieldset1"  label="Select category of your comment" label-for="select-topic" >
 
-        <b-form-select v-model="addedPost.selectedTopic" id="select-topic">
-          <option v-for="topic in topics">{{topic.name}}</option>
+        <b-form-select v-model="addedComment.category" id="select-topic">
+          <option v-for="category in categories">{{category.name}}</option>
         </b-form-select>
       </b-form-group>
     </div>
@@ -32,10 +32,10 @@
 
 <template>
 <pre v-show="showPrewiew">
-<h1>{{addedPost.selectedTopic}}</h1>
-<h2>{{addedPost.title}}</h2>
+<h1>{{addedComment.category}}</h1>
+<h2>Written by {{addedComment.author}}</h2>
 <p>
-  {{addedPost.content}}
+  {{addedComment.content}}
 </p>
 </pre>
 </template>
@@ -57,34 +57,32 @@ export default {
     return {
       showPrewiew: false,
 
-      addedPost: {
-        title: "",
+      addedComment: {
+        category: "",
         content: "",
-        selectedTopic: ""
+        postId: "",
+        author: "",
+        id: ""
       },
 
-      topics: [{
+      categories: [{
           id: 1,
-          name: 'Frontend'
+          name: 'Question'
         },
         {
           id: 2,
-          name: 'Backend'
+          name: 'Answer'
         },
         {
           id: 3,
-          name: 'Agile'
-        },
-        {
-          id: 4,
-          name: 'Testing'
+          name: 'Other'
         }
       ]
 
 
     }
   },
-  methods: {
+  methods: { // zmienic na add coment (musi przesylac id dla postu)
     handleSubmit: function() {
       this.$http.post('http://demo9377995.mockable.io/addpost', this.addedPost).then(function(data) {
         console.log(data);
