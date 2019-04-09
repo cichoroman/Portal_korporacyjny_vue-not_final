@@ -86,12 +86,22 @@ export default {
   },
   methods: {
     handleSubmit: function() {
-      this.$http.post('http://demo9377995.mockable.io/addpost', this.addedPost).then(function(data) {
-        console.log(data);
-      });
+
+
+      this.$http.post('/api/post/create.php', this.addedPost)
+      .then(response => {
+    // success callback
+  }, response => {
+
+  });
+
+
+
+
+     }
     }
   }
-}
+
 </script>
 
 <style scoped>
