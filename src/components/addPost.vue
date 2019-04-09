@@ -87,16 +87,13 @@ export default {
   methods: {
     handleSubmit: function() {
 
-
+//ustawiony  adres zgodny z tym zdefiniowanym w proxy w pliku webpack.config to plus origin * w backendzie pozwala sie łaczyć
       this.$http.post('/api/post/create.php', this.addedPost)
       .then(response => {
     // success callback
   }, response => {
 
   });
-
-
-
 
      }
     }
