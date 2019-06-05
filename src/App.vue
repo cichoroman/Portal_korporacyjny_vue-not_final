@@ -69,7 +69,7 @@ export default {
 <style >
 body {
 
- background-image: url("http://elteonline.hu/wp-content/uploads/2018/11/bor%C3%ADt%C3%B32.jpg");
+ background-image: url("assets/backgroung1.png" );
   background-repeat: no-repeat;
   background-position: right top;
   background-attachment: fixed;
@@ -78,6 +78,9 @@ body {
 
 background-color: rgb(182, 182, 182);
   }
+  .text-muted {
 
+    color: #b4bbc2 !important;
+}
 
 </style>
