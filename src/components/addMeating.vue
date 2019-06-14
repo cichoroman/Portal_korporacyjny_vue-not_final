@@ -6,15 +6,18 @@
     </div>
     <div slot="form-fields">
       <b-form-group id="fieldset1" label="Enter the title" label-for="select-topic">
-        <b-form-input v-model="addedPost.title" type="text" placeholder="title" required />
+        <b-form-input v-model="addedMeating.title" type="text" placeholder="title" required />
       </b-form-group>
       <b-form-group id="fieldset1" label="Enter the description or specific question" label-for="select-topic">
-        <b-form-textarea v-model="addedPost.description" type="text" placeholder="Your post or question" :rows="3" :max-rows="6" required />
+        <b-form-textarea v-model="addedMeating.description" type="text" placeholder="Your post or question" :rows="3" :max-rows="6" required />
       </b-form-group>
       <b-form-group id="fieldset1" description="If there is no matching topic, contact the administrator." label="Choose the topic from the list" label-for="select-topic">
-        <b-form-select v-model="addedPost.selectedTopic" id="select-topic">
+        <b-form-select v-model="addedMeating.selectedTopic" id="select-topic">
           <option v-for="topic in topics">{{topic.name}}</option>
         </b-form-select>
+      </b-form-group>
+        <b-form-group id="fieldset1" label="Enter the date" label-for="select-topic">
+      <b-form-input type="date"v-model="addedMeating.date" ></b-form-input>
       </b-form-group>
     </div>
     <div slot="form-controls">
@@ -25,9 +28,10 @@
   <b-jumbotron bg text-variant="white" border-variant="dark" class="navColor">
     <template>
       <pre v-show="showPrewiew">
-        <h1>{{addedPost.selectedTopic}}</h1>
-        <h2>{{addedPost.title}}</h2>
-        <p>{{addedPost.description}}</p>
+        <h1>{{addedMeating.selectedTopic}}</h1>
+        <h2>{{addedMeating.title}}</h2>
+        <p>{{addedMeating.description}}</p>
+        <p>{{addedMeating.date}}</p>
       </pre>
     </template>
   </b-jumbotron>
@@ -45,10 +49,12 @@ export default {
     return {
       showPrewiew: false,
 
-      addedPost: {
+      addedMeating: {
         title: "",
         description: "",
-        selectedTopic: ""
+        selectedTopic: "",
+        date: ""
+
       },
 
       topics: [{
@@ -76,7 +82,7 @@ export default {
     handleSubmit: function() {
 
       //ustawiony  adres zgodny z tym zdefiniowanym w proxy w pliku webpack.config to plus origin * w backendzie pozwala sie łaczyć
-      this.$http.post('/api/meating/create.php', this.addedPost)
+      this.$http.post('/api/meating/create.php', this.addedMeating)
         .then(response => {
           // success callback
         }, response => {
