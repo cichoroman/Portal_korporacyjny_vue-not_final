@@ -14,6 +14,9 @@
           <router-link to="/addPost"><b-button  variant="primary" >Add post</b-button></router-link>
         </b-nav-item>
         <b-nav-item>
+          <router-link to="/addMeating"><b-button  variant="primary" >Add meating</b-button></router-link>
+        </b-nav-item>
+        <b-nav-item>
           <router-link to="/addUser"><b-button  variant="primary" >Add user</b-button></router-link>
         </b-nav-item>
       </b-navbar-nav>
