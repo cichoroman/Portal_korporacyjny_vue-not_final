@@ -32,17 +32,14 @@ export default {
   data() {
     return {
       posts: [],
-      topic: 'front',
-      postId: -1
-      //uwaga shardkodzone!!! buttony maja być do tego i maja być pobrane getem
-
+      topic: 'front'
     }
   },
   methods: {
 
   },
   created() {
-    this.$http.get("http://localhost/api/post/read.php").then(function(data) {
+    this.$http.get("/api/post/read.php").then(function(data) {
       console.log(data);
       this.posts = data.body.records;
     })

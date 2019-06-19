@@ -8,7 +8,7 @@
       <b-form-group id="fieldset1" label="Enter the title" label-for="select-topic">
         <b-form-input v-model="addedMeating.title" type="text" placeholder="title" required />
       </b-form-group>
-      <b-form-group id="fieldset1" label="Enter the description or specific question" label-for="select-topic">
+      <b-form-group id="fieldset1" label="Enter the description" label-for="select-topic">
         <b-form-textarea v-model="addedMeating.description" type="text" placeholder="Your post or question" :rows="3" :max-rows="6" required />
       </b-form-group>
       <b-form-group id="fieldset1" description="If there is no matching topic, contact the administrator." label="Choose the topic from the list" label-for="select-topic">
